@@ -1,0 +1,20 @@
+/* calendarStyles.css */
+.react-calendar {
+  border: none;
+  font-family: sans-serif;
+  border-radius: 12px;
+  overflow: hidden;
+  background-color: #f9fafb;
+}
+.react-calendar__tile.highlight {
+  background-color: #34d399 !important;
+  color: white !important;
+  font-weight: bold;
+  border-radius: 10px;
+}
+/* src/components/calendarStyles.css */
+.highlight {
+  background: #4ade80 !important; /* green */
+  color: white !important;
+  border-radius: 50% !important;
+}
