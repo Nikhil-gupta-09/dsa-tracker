@@ -32,13 +32,12 @@ const Header = () => {
       const userData = {
         name: result.user.displayName,
         email: result.user.email,
-        photoURL: result.user.photoURL, // ✅ use correct Firebase key
+        photoURL: result.user.photoURL,
       };
 
       setUser(userData);
       localStorage.setItem("dsa-user", JSON.stringify(userData));
 
-      // ✅ Update XP on leaderboard
       await setDoc(doc(db, "leaderboard", userData.email), {
         ...userData,
         xp: parseInt(localStorage.getItem("xp")) || 0,
@@ -96,11 +95,9 @@ const Header = () => {
 
             {user ? (
               <div className="flex items-center gap-2 ml-3">
-                <img
-                  src={user.photoURL} // ✅ changed from user.photo to user.photoURL
-                  alt="avatar"//yaha user thaaa
-                  className="w-8 h-8 rounded-full border"
-                />
+                <div className="w-8 h-8 rounded-full bg-blue-600 text-white flex items-center justify-center font-bold text-sm uppercase">
+                  {user?.name?.charAt(0) || "U"}
+                </div>
                 <span className="text-sm text-gray-800 dark:text-white">
                   {user.name}
                 </span>
@@ -112,7 +109,6 @@ const Header = () => {
                 </button>
               </div>
             ) : (
-              
               <button
                 onClick={handleLogin}
                 className="px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700"

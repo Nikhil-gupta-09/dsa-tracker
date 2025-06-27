@@ -49,17 +49,9 @@ export default function Leaderboard() {
                       : index + 1}
                   </td>
                   <td className="flex items-center gap-2 py-2">
-                    {u.photoURL ? (
-                      <img
-                        src={u.photoURL}
-                        alt={u.name}
-                        className="w-8 h-8 rounded-full border"
-                      />
-                    ) : (
-                      <div className="w-8 h-8 rounded-full bg-gray-300 text-gray-700 flex items-center justify-center font-bold uppercase">
-                        {u.name?.charAt(0) || "U"}
-                      </div>
-                    )}
+                    <div className="w-8 h-8 rounded-full bg-green-600 text-white flex items-center justify-center font-bold uppercase text-sm">
+                      {u.name?.charAt(0) || "U"}
+                    </div>
                     {u.name}
                   </td>
                   <td>{u.xp}</td>
